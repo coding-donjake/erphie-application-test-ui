@@ -1,0 +1,45 @@
+.erphie-button {
+  @apply flex flex-row gap-3 items-center;
+  @apply px-5 py-2.5 border rounded-md focus:outline-none focus:ring-4;
+  @apply text-sm font-medium;
+
+  &-icon-wrap {
+    @apply flex flex-row items-center justify-center;
+    width: 1.6em;
+  }
+}
+
+.erphie-button-light {
+  @apply bg-white border-gray-300 hover:bg-gray-100 focus:ring-gray-100;
+  @apply text-gray-900;
+}
+
+.erphie-button-dark {
+  @apply bg-gray-800 hover:bg-gray-900 focus:ring-gray-300;
+  @apply text-white;
+}
+
+.erphie-button-blue {
+  @apply bg-blue-700 hover:bg-blue-800 focus:ring-blue-300;
+  @apply text-white;
+}
+
+.erphie-button-green {
+  @apply bg-green-700 hover:bg-green-800 focus:ring-green-300;
+  @apply text-white;
+}
+
+.erphie-button-red {
+  @apply bg-red-700 hover:bg-red-800 focus:ring-red-300;
+  @apply text-white;
+}
+
+.erphie-button-yellow {
+  @apply bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300;
+  @apply text-gray-900;
+}
+
+.erphie-button-purple {
+  @apply bg-purple-700 hover:bg-purple-800 focus:ring-purple-300;
+  @apply text-white;
+}

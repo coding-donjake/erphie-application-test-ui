@@ -1,0 +1,72 @@
+.erphie-screen {
+  @apply flex flex-row gap-4;
+  @apply w-screen h-screen max-h-screen p-4;
+  @apply bg-gray-100;
+
+  &-left-panel {
+    @apply flex flex-col p-2;
+    @apply w-60 p-2 rounded-lg shadow-md;
+    @apply bg-white;
+
+    &-logo {
+      @apply max-h-20 mx-4 my-6;
+    }
+
+    &-navigation {
+      @apply flex flex-col gap-2 flex-1;
+    }
+  }
+
+  &-content {
+    @apply flex flex-col gap-4 flex-1;
+    @apply max-h-full;
+
+    &-app-bar {
+      @apply flex flex-row gap-2;
+      @apply p-2 rounded-lg shadow-md;
+      @apply bg-white;
+    }
+
+    &-wrap {
+      @apply flex flex-col gap-2 flex-1;
+      @apply p-2 rounded-lg shadow-md;
+      @apply overflow-y-auto;
+      @apply bg-white;
+
+      &::-webkit-scrollbar {
+        @apply w-4 rounded-lg;
+        @apply bg-gray-300;
+        padding: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        @apply rounded-lg;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-lg;
+        @apply bg-gray-500;
+      }
+
+      &::-webkit-scrollbar-button:single-button:vertical:decrement {
+        @apply h-4;
+        background-image: url("../../assets/caret-up-solid-full.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+
+      &::-webkit-scrollbar-button:single-button:vertical:increment {
+        @apply h-4;
+        background-image: url("../../assets/caret-down-solid-full.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+  }
+
+  &-right-panel {
+    @apply w-60;
+  }
+}

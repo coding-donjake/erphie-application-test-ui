@@ -1,0 +1,183 @@
+.erphie-input {
+  @apply block;
+
+  label {
+    @apply block;
+    @apply text-sm font-medium;
+  }
+
+  input {
+    @apply block;
+    @apply w-full p-2.5 border rounded-md focus:ring-1 focus:read-only:ring-0;
+    @apply text-sm;
+  }
+}
+
+.erphie-input-light {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-gray-50 border-gray-300 focus:ring-gray-500 focus:border-gray-500 focus:read-only:border-gray-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-input-dark {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-gray-700 border-gray-600 focus:ring-gray-500 focus:border-gray-500 focus:read-only:border-gray-600;
+    @apply text-white placeholder-gray-400;
+  }
+}
+
+.erphie-input-blue {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-blue-50 border-blue-300 focus:ring-blue-500 focus:border-blue-500 focus:read-only:border-blue-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-input-green {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-green-50 border-green-300 focus:ring-green-500 focus:border-green-500 focus:read-only:border-green-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-input-red {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-red-50 border-red-300 focus:ring-red-500 focus:border-red-500  focus:read-only:border-red-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-input-yellow {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-yellow-50 border-yellow-300 focus:ring-yellow-500 focus:border-yellow-500  focus:read-only:border-yellow-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-input-purple {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-purple-50 border-purple-300 focus:ring-purple-500 focus:border-purple-500 focus:read-only:border-purple-300;
+    @apply text-gray-900;
+  }
+}
+
+.erphie-file-input {
+  @apply block;
+
+  label {
+    @apply block;
+    @apply text-sm font-medium;
+  }
+
+  input {
+    @apply block;
+    @apply w-full p-0 pr-2.5 border rounded-md file:mr-2.5 file:py-2.5 file:px-4 file:border-none focus:ring-1 focus:read-only:ring-0;
+    @apply text-sm file:font-medium;
+    @apply cursor-pointer file:cursor-pointer file:read-only:cursor-auto read-only:cursor-auto;
+  }
+}
+
+.erphie-file-input-light {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-gray-50 border-gray-300 file:bg-gray-800 file:hover:bg-gray-900 file:hover:read-only:bg-gray-800 focus:ring-gray-500 focus:border-gray-500 focus:read-only:border-gray-300;
+    @apply text-gray-900 file:text-white;
+  }
+}
+
+.erphie-file-input-dark {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-gray-700 border-gray-600 file:bg-white file:hover:bg-gray-100 file:hover:read-only:bg-white focus:ring-gray-500 focus:border-gray-500 focus:read-only:border-gray-600;
+    @apply text-white file:text-gray-900;
+  }
+}
+
+.erphie-file-input-blue {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-blue-50 border-blue-300 file:bg-blue-700 file:hover:bg-blue-800 file:hover:read-only:bg-blue-700 focus:ring-blue-500 focus:border-blue-500 focus:read-only:border-blue-300;
+    @apply text-gray-900 file:text-white;
+  }
+}
+
+.erphie-file-input-green {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-green-50 border-green-300 file:bg-green-700 file:hover:bg-green-800 file:hover:read-only:bg-green-700 focus:ring-green-500 focus:border-green-500 focus:read-only:border-green-300;
+    @apply text-gray-900 file:text-white;
+  }
+}
+
+.erphie-file-input-red {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-red-50 border-red-300 file:bg-red-700 file:hover:bg-red-800 file:hover:read-only:bg-red-700 focus:ring-red-500 focus:border-red-500 focus:read-only:border-red-300;
+    @apply text-gray-900 file:text-white;
+  }
+}
+
+.erphie-file-input-yellow {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-yellow-50 border-yellow-300 file:bg-yellow-400 file:hover:bg-yellow-500 file:hover:read-only:bg-yellow-400 focus:ring-yellow-500 focus:border-yellow-500 focus:read-only:border-yellow-300;
+    @apply text-gray-900 file:text-gray-900;
+  }
+}
+.erphie-file-input-purple {
+  label {
+    @apply text-gray-900;
+  }
+
+  input {
+    @apply bg-purple-50 border-purple-300 file:bg-purple-700 file:hover:bg-purple-800 file:hover:read-only:bg-purple-700 focus:ring-purple-500 focus:border-purple-500 focus:read-only:border-purple-300;
+    @apply text-gray-900 file:text-white;
+  }
+}
