@@ -3,8 +3,10 @@ import {
   faDesktop,
   faFolder,
   faGears,
+  faPlay,
   faRightFromBracket,
   faRocket,
+  faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState, AppDispatch } from "../../store";
@@ -24,9 +26,17 @@ const WorkspaceScreen = () => {
 
   const handleRecordingFolderChange = async () => {
     const result = await window.electronAPI.selectFolder();
-    console.log(result);
 
     dispatch(setRecordingFolder(result ? result[0] : ""));
+  };
+
+  const record = async () => {
+    const result = await window.electronAPI.record({
+      preferredBrowser: "chromium",
+      headless: false,
+      args: [],
+    });
+    console.log(result);
   };
 
   return (
@@ -79,6 +89,19 @@ const WorkspaceScreen = () => {
                     disabled
                   />
                 </span>,
+                <div className="flex flex-row gap-2 ml-8">
+                  <Button
+                    variant="red"
+                    icon={<FontAwesomeIcon icon={faVideo} />}
+                    text="Record"
+                    onClick={record}
+                  />
+                  <Button
+                    variant="green"
+                    icon={<FontAwesomeIcon icon={faPlay} />}
+                    text="Play"
+                  />
+                </div>,
               ]}
             />
           }
