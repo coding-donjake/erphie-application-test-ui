@@ -19,6 +19,7 @@ import AppBar from "../../components/screen/AppBar";
 import Input from "../../components/input/Input";
 import { useEffect } from "react";
 import { toastLog } from "../../lib/log";
+import { toast } from "react-toastify";
 
 const WorkspaceScreen = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,8 +35,17 @@ const WorkspaceScreen = () => {
 
   const record = async () => {
     if (!(await window.electronAPI.isNodeJSInstalled())) return;
-    if (!(await window.electronAPI.isPlaywrightBrowserInstalled("chromium")))
-      return;
+    if (!(await window.electronAPI.isPlaywrightBrowserInstalled("chromium"))) {
+      await toast.promise(
+        window.electronAPI.installPlaywrightBrowser("chromium"),
+        {
+          pending: "Installing chromium...",
+          success: "Chromium installed successfully!",
+          error: "Failed to install chromium.",
+        }
+      );
+    }
+
     const result = await window.electronAPI.record({
       preferredBrowser: "chromium",
       headless: false,

@@ -95,6 +95,9 @@ type SaveFolderReturnValue = {
 declare global {
   interface Window {
     electronAPI: {
+      installPlaywrightBrowser: (
+        browser: "chromium" | "firefox" | "webkit"
+      ) => Promise<undefined>;
       isK6Installed: () => Promise<boolean>;
       isNodeJSInstalled: () => Promise<boolean>;
       isPlaywrightBrowserInstalled: (
