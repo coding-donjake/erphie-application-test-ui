@@ -39,8 +39,8 @@ const WorkspaceScreen = () => {
       await toast.promise(
         window.electronAPI.installPlaywrightBrowser("chromium"),
         {
-          pending: "Installing chromium...",
-          success: "Chromium installed successfully!",
+          pending: "Verifying and installing requirements...",
+          success: "Chromium installed.",
           error: "Failed to install chromium.",
         }
       );
