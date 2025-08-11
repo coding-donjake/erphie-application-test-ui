@@ -2,14 +2,14 @@ import "./style.scss";
 
 interface ScreenProps {
   leftPanel?: React.ReactNode;
-  content?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-const Screen: React.FC<ScreenProps> = ({ leftPanel, content }) => {
+const Screen: React.FC<ScreenProps> = ({ leftPanel, children }) => {
   return (
     <div className="erphie-screen">
       {leftPanel}
-      {content}
+      {children}
       <div className="erphie-screen-right-panel"></div>
     </div>
   );

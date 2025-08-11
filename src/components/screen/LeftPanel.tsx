@@ -1,14 +1,10 @@
 interface LeftPanelProps {
   logo?: string;
   logoAlt?: string;
-  navigations?: React.ReactNode[];
+  children?: React.ReactNode;
 }
 
-const LeftPanel: React.FC<LeftPanelProps> = ({
-  logo,
-  logoAlt,
-  navigations,
-}) => {
+const LeftPanel: React.FC<LeftPanelProps> = ({ logo, logoAlt, children }) => {
   return (
     <div className="erphie-screen-left-panel">
       {logo ? (
@@ -18,7 +14,7 @@ const LeftPanel: React.FC<LeftPanelProps> = ({
           alt={logoAlt}
         />
       ) : null}
-      <div className="erphie-screen-left-panel-navigation">{navigations}</div>
+      <div className="erphie-screen-left-panel-navigation">{children}</div>
     </div>
   );
 };
