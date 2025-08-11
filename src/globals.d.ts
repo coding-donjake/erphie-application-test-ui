@@ -48,6 +48,11 @@ type Group = {
   entries: Entry[];
 };
 
+export type LogMessage = {
+  type: "info" | "success" | "warning" | "error" | "default";
+  message: string;
+};
+
 type RecordOptions = {
   preferredBrowser?: "chromium" | "firefox" | "webkit";
   headless?: boolean;
@@ -90,11 +95,18 @@ type SaveFolderReturnValue = {
 declare global {
   interface Window {
     electronAPI: {
+      isK6Installed: () => Promise<boolean>;
+      isNodeJSInstalled: () => Promise<boolean>;
+      isPlaywrightBrowserInstalled: (
+        browser: "chromium" | "firefox" | "webkit"
+      ) => Promise<boolean>;
       record: (options: RecordOptions) => Promise<Script>;
       saveFile: () => Promise<SaveFileReturnValue>;
       saveFolder: () => Promise<SaveFolderReturnValue>;
       selectFile: () => Promise<string[] | undefined>;
       selectFolder: () => Promise<string[] | undefined>;
+
+      onLogMessage: (callback: (log: LogMessage) => void) => () => void;
     };
   }
 }

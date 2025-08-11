@@ -17,6 +17,9 @@ import Button from "../../components/button/Button";
 import Content from "../../components/screen/Content";
 import AppBar from "../../components/screen/AppBar";
 import Input from "../../components/input/Input";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
+import { toastLog } from "../../lib/log";
 
 const WorkspaceScreen = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -31,6 +34,10 @@ const WorkspaceScreen = () => {
   };
 
   const record = async () => {
+    if (!(await window.electronAPI.isNodeJSInstalled())) return;
+    if (!(await window.electronAPI.isPlaywrightBrowserInstalled("chromium")))
+      return;
+    return;
     const result = await window.electronAPI.record({
       preferredBrowser: "chromium",
       headless: false,
@@ -39,32 +46,37 @@ const WorkspaceScreen = () => {
     console.log(result);
   };
 
+  useEffect(toastLog, []);
+
   return (
     <Screen
       leftPanel={
         <LeftPanel
-          logoAlt="Erphie Logo"
           navigations={[
             <Button
               variant="purple"
               icon={<FontAwesomeIcon icon={faDesktop} />}
               text="Workspace"
+              key="workspace"
             />,
             <Button
               variant="dark"
               icon={<FontAwesomeIcon icon={faRocket} />}
               text="Execution"
+              key="execution"
             />,
             <Button
               variant="dark"
               icon={<FontAwesomeIcon icon={faGears} />}
               text="Settings"
+              key="settings"
             />,
             <Button
               variant="red"
               cls="push-bottom"
               icon={<FontAwesomeIcon icon={faRightFromBracket} />}
               text="Exit Application"
+              key="exitApplication"
             />,
           ]}
         />
@@ -79,8 +91,9 @@ const WorkspaceScreen = () => {
                   icon={<FontAwesomeIcon icon={faFolder} />}
                   text="Select Folder"
                   onClick={handleRecordingFolderChange}
+                  key="recordingFolderButton"
                 />,
-                <span className="flex-1">
+                <span className="flex-1" key="recordingFolder">
                   <Input
                     variant="light"
                     id="recordingFolder"
@@ -89,7 +102,10 @@ const WorkspaceScreen = () => {
                     disabled
                   />
                 </span>,
-                <div className="flex flex-row gap-2 ml-8">
+                <div
+                  className="flex flex-row gap-2 ml-8"
+                  key="recordingActions"
+                >
                   <Button
                     variant="red"
                     icon={<FontAwesomeIcon icon={faVideo} />}
